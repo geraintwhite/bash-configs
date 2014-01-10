@@ -25,5 +25,6 @@ alias drop-shell='/opt/Dropbox-Uploader/./dropShell.sh'
 alias python='python3'
 
 alias clbin='curl -F "clbin=<-" https://clbin.com'
+alias wanip='curl icanhazip.com'
 
 alias keys="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
