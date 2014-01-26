@@ -5,6 +5,8 @@ alias ln='ln -i'
 
 alias mkdir='mkdir -pv'
 alias ..='cd ..'
+alias cd='pushd > /dev/null'
+alias cd-='popd > /dev/null'
 alias open='xdg-open'
 alias dd='dcfldd'
 
