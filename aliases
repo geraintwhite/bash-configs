@@ -4,8 +4,6 @@ alias cp='cp -i'
 alias ln='ln -i'
 
 alias mkdir='mkdir -pv'
-alias cd='pushd > /dev/null'
-alias cd-='popd > /dev/null'
 alias ..='cd ..'
 alias open='xdg-open'
 alias dd='dcfldd'
