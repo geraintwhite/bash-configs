@@ -7,7 +7,7 @@ alias mkdir='mkdir -pv'
 alias ..='cd ..'
 alias open='xdg-open'
 alias dd='dcfldd'
-alias nano='nano -E'
+alias nano='nano -EFH -T 4'
 
 alias ls='ls -lh --color'
 alias du='du -h'
