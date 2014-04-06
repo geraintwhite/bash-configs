@@ -7,6 +7,7 @@ alias mkdir='mkdir -pv'
 alias ..='cd ..'
 alias open='xdg-open'
 alias dd='dcfldd'
+alias nano='nano -E'
 
 alias ls='ls -lh --color'
 alias du='du -h'
@@ -20,11 +21,11 @@ alias autoremove='sudo apt-get autoremove'
 alias reload='source $HOME/.bashrc'
 alias c='clear'
 
-alias dropbox-uploader='/opt/Dropbox-Uploader/./dropbox_uploader.sh'
-alias drop-shell='/opt/Dropbox-Uploader/./dropShell.sh'
 alias python='python3'
 
 alias clbin='curl -F "clbin=<-" https://clbin.com'
 alias wanip='curl icanhazip.com'
 
 alias keys="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
+
+alias build-repo='python ~/repos/post-receive/main.py -d'
