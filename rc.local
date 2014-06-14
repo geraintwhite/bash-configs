@@ -1,0 +1,30 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+
+# Fix GNU screen startup issue
+SCREEN=/var/run/screen
+mkdir -p $SCREEN
+chmod 777 $SCREEN
+
+# Fix Xauthority issue with changed hostname
+XAUTHORITY=/var/host/Xauthority
+xauth -f $XAUTHORITY add :0 MIT-MAGIC-COOKIE-1 `xauth -f $XAUTHORITY list | sed -e 's/.*  MIT-MAGIC-COOKIE-1  //'`
+chmod 664 $XAUTHORITY
+
+# Start services
+service apache2 start
+host-x11 twm&
+host-x11 synergyc -n chromebook geraint-ubuntu
+
+exit 0
