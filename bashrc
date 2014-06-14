@@ -117,6 +117,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -z "$STY" ]; then
-    exec screen
-fi
+
+# This will start GNU screen on login. I use this on my Chromebook to emulate a tabbed terminal.
+
+#if [ -z "$STY" ]; then
+#    exec screen
+#fi
