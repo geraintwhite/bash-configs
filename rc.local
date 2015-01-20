@@ -12,19 +12,28 @@
 # By default this script does nothing.
 
 
-# Fix GNU screen startup issue
-SCREEN=/var/run/screen
-mkdir -p $SCREEN
-chmod 777 $SCREEN
+# Open all ports
+/sbin/iptables -P INPUT ACCEPT
+
+# Fix screen and sshd dirs
+mkdir -pm0777 /var/run/screen
+mkdir -pm0755 /var/run/sshd
 
 # Fix Xauthority issue with changed hostname
+hostname chromebook
 XAUTHORITY=/var/host/Xauthority
 xauth -f $XAUTHORITY add :0 MIT-MAGIC-COOKIE-1 `xauth -f $XAUTHORITY list | sed -e 's/.*  MIT-MAGIC-COOKIE-1  //'`
 chmod 664 $XAUTHORITY
 
+# Fix X painting issues and start window manager
+host-x11 xprop -name aura_root_0 -f _NET_WM_WINDOW_TYPE 32a -set _NET_WM_WINDOW_TYPE _NET_WM_WINDOW_TYPE_DESKTOP
+#host-x11 openbox &
+echo 0 > /sys/module/i915/parameters/i915_enable_fbc
+
 # Start services
 service apache2 start
-host-x11 twm&
 host-x11 synergyc -n chromebook geraint-ubuntu
+#/usr/sbin/mysqld &
+/usr/sbin/sshd &
 
 exit 0
