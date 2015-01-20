@@ -6,7 +6,7 @@ alias ln='ln -i'
 alias mkdir='mkdir -pv'
 alias ..='cd ..'
 alias open='xdg-open'
-alias dd='dcfldd'
+#alias dd='dcfldd'
 alias nano='nano -EFH -T 4'
 
 alias ls='ls -lh --color'
@@ -23,21 +23,14 @@ alias logout='gnome-session-quit --no-prompt'
 alias reload='source $HOME/.bashrc'
 alias c='clear'
 
-alias dropbox-uploader='/opt/Dropbox-Uploader/./dropbox_uploader.sh'
-alias drop-shell='/opt/Dropbox-Uploader/./dropShell.sh'
 alias python='python3'
 
 alias clbin='curl -F "clbin=<-" https://clbin.com'
-alias wanip='curl icanhazip.com'
-
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias updatepostfix='sudo postmap /etc/postfix/virtual; sudo postalias /etc/aliases; sudo service postfix reload'
 alias keys="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 
-alias update-respawn='ssh respawn sudo /www/update content'
-alias olls_proxy='ssh -D 8080 guest@dev.oliverfaircliff.com -f -N'
-
-function node-deploy {
-    cd /var/node/$1
-    forever start -a -l forever.log -o out.log -e err.log index.js
+function screend {
+    cmd=$([ $# -eq 2 ] && echo $2 || echo $1)
+    screen -dmS $1 $cmd
 }
-
-export www=~/repos/www/projects
