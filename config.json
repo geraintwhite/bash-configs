@@ -1,0 +1,27 @@
+{
+    "geraint-vps": {
+        "bashrc": "~/.bashrc",
+        "aliases": "~/.bash_aliases"
+    },
+    "geraint-mac": {
+        "aliases": "~/.bash_aliases"
+    },
+    "geraint-ubuntu": {
+        "bashrc": "~/.bashrc",
+        "aliases": "~/.bash_aliases"
+    },
+    "raspberrypi": {
+        "bashrc": "~/.bashrc",
+        "aliases": "~/.bash_aliases",
+        "motd": "~/.bash_profile"
+    },
+    "aplus": {
+        "bashrc": "~/.bashrc",
+        "aliases": "~/.bash_aliases"
+    },
+    "chromebook": {
+        "bashrc": "~/.bashrc",
+        "aliases": "~/.bash_aliases",
+        "rc.local": "/etc/rc.local"
+    }
+}
