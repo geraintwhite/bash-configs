@@ -1,6 +1,7 @@
 import os
 import json
 import sys
+import shutil
 
 
 def get_config(hostname):
@@ -16,7 +17,14 @@ def get_config(hostname):
 
 def main():
     config = get_config(os.uname()[1])
-    print(config)
+
+    for file, path in config.items():
+        dest = os.path.expanduser(path)
+        print('cp {} {}'.format(file, dest))
+        try:
+            shutil.copyfile(file, dest)
+        except PermissionError:
+            os.system('sudo cp {} {}'.format(file, dest))
 
 if __name__ == '__main__':
     main()
