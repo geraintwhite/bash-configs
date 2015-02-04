@@ -16,8 +16,7 @@ def get_config(hostname):
         if 'default' in config:
             print('Using default config')
             return config['default']
-        else:
-            sys.exit('Cannot find default config - quitting')
+        sys.exit('Cannot find default config - quitting')
 
 
 def main():
