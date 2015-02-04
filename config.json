@@ -16,6 +16,6 @@
     },
     "default": {
         "bashrc": "~/.bashrc",
-        "aliases": "~/.bash_aliases",
+        "aliases": "~/.bash_aliases"
     }
 }
