@@ -10,9 +10,14 @@ def get_config(hostname):
         config = json.load(f)
 
     try:
-        return config[hostname]
+        return config['hosts'][hostname]
     except KeyError:
-        sys.exit('No entry for {} in {}'.format(hostname, filename))
+        print('No entry for {} in {}'.format(hostname, filename))
+        if 'default' in config:
+            print('Using default config')
+            return config['default']
+        else:
+            sys.exit('Cannot find default config - quitting')
 
 
 def main():
