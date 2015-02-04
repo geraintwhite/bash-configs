@@ -28,6 +28,7 @@ def main():
         try:
             shutil.copyfile(file, dest)
         except PermissionError:
+            print('Permission denied - requesting sudo access')
             os.system('sudo cp {} {}'.format(file, dest))
 
 if __name__ == '__main__':
