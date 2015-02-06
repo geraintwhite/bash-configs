@@ -20,7 +20,11 @@ def get_config(hostname):
 
 
 def main():
-    config = get_config(os.uname()[1])
+    try:
+        hostname = sys.argv[1]
+    except indexError:
+        hostname = os.uname()[1]
+    config = get_config(hostname)
 
     for file, path in config.items():
         dest = os.path.expanduser(path)
