@@ -31,6 +31,12 @@ alias updatepostfix='sudo postmap /etc/postfix/virtual; sudo postalias /etc/alia
 alias keys="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 
 function screend {
-    cmd=$([ $# -eq 2 ] && echo $2 || echo $1)
+    cmd=$([ $# -gt 1 ] && echo ${@:2} || echo ${@:1})
     screen -dmS $1 $cmd
 }
+
+function screenx {
+    screen -XS $1 quit
+}
+
+export PYTHONPATH="/home/geraint/repos/python/modules"
