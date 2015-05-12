@@ -40,3 +40,5 @@ function screenx {
 }
 
 export PYTHONPATH="/home/geraint/repos/python/modules"
+alias startxiwi="XMETHOD=xiwi screend xiwi startxfce4"
+alias startxorg="XMETHOD=xorg screend xorg startxfce4"
