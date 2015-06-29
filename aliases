@@ -8,6 +8,7 @@ alias ..='cd ..'
 alias open='xdg-open'
 #alias dd='dcfldd'
 alias nano='nano -EFH -T 4'
+alias git='hub'
 
 alias ls='ls -lh --color'
 alias du='du -h'
