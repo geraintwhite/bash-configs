@@ -117,9 +117,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+EDITOR=vim
 
 # This will start GNU screen on login. I use this on my Chromebook to emulate a tabbed terminal.
 
 #if [ -z "$STY" ]; then
 #    exec screen
 #fi
+
+
+. ~/repos/gh/cryptotools/ct_bash_completion.sh
+
+
+# added by travis gem
+[ -f /home/geraint/.travis/travis.sh ] && source /home/geraint/.travis/travis.sh
