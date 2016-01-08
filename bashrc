@@ -58,7 +58,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] $\[\033[00m\] '
@@ -121,13 +122,13 @@ EDITOR=vim
 
 # This will start GNU screen on login. I use this on my Chromebook to emulate a tabbed terminal.
 
-#if [ -z "$STY" ]; then
-#    exec screen
-#fi
-
-
-. ~/repos/gh/cryptotools/ct_bash_completion.sh
+if [ -z "$STY" ]; then
+    exec screen
+fi
 
 
 # added by travis gem
 [ -f /home/geraint/.travis/travis.sh ] && source /home/geraint/.travis/travis.sh
+
+export NVM_DIR="/home/geraint/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
