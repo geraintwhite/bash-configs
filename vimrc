@@ -4,5 +4,6 @@ set expandtab
 set autoindent
 set smarttab
 
+autocmd BufWritePre * :%s/\s\+$//e  " Remove trailing whitespace
 syntax on
 filetype plugin indent on
