@@ -42,6 +42,17 @@ function screenx {
 }
 
 export PYTHONPATH="/home/geraint/repos/python/modules"
-alias svntoken="/home/geraint/Downloads/gettok.sh"
+alias svntoken="/home/geraint/Downloads/work/gettok.sh"
 alias startxiwi="XMETHOD=xiwi screend xiwi startxfce4"
 alias startxorg="XMETHOD=xorg screend xorg startxfce4"
+
+function file-url {
+    echo "file:///home/chronos/user$(echo $([ "$1" ] && readlink -e "$1" || pwd -P) | sed "s@$HOME@@")"
+}
+
+function swap {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
