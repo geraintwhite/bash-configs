@@ -1,6 +1,7 @@
 hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
 
 startup_message off
+vbell off
 
 bindkey ^[[1;2D prev # shift-left
 bindkey ^[[1;2C next # shift-right
@@ -9,6 +10,6 @@ bindkey ^[[1;2B screen # shift-down
 bindkey ^[[1;6D number -1 # ctrl-shift-left
 bindkey ^[[1;6C number +1 # ctrl-shift-right
 
-termcapinfo * ti@:te@
-termcapinfo * ti@:te@
-defscrollback 10000
+bindkey ^T title # ctrl-shift-t
+
+termcapinfo xterm* ti@:te@
