@@ -56,3 +56,13 @@ function swap {
     mv "$2" "$1"
     mv $TMPFILE "$2"
 }
+
+function proxies_on {
+    export http_proxy=http://proxy.intra.bt.com:8080
+    export https_proxy=https://proxy.intra.bt.com:8080
+}
+
+function proxies_off {
+    unset http_proxy
+    unset https_proxy
+}
