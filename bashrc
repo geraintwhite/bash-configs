@@ -118,7 +118,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-EDITOR=vim
+export EDITOR=vim
+export TERM=xterm-256color
 
 # This will start GNU screen on login. I use this on my Chromebook to emulate a tabbed terminal.
 
