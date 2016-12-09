@@ -22,7 +22,7 @@ alias purge='sudo apt-get purge'
 alias autoremove='sudo apt-get autoremove'
 
 alias logout='gnome-session-quit --no-prompt'
-alias reload='source $HOME/.bashrc'
+alias reload='source $HOME/.bash_profile'
 alias c='clear'
 
 alias python='python3'
